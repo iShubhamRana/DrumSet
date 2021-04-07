@@ -25,7 +25,7 @@
              justify-content: space-evenly;
              width: 100vw;
              margin-top: 170px;
-             align-items: center;
+             align-items: centerx;
 
             }
             .key{
@@ -128,7 +128,7 @@
         for (let i=0 ; i<list.length ; i++ ){
             list[i].addEventListener('click',(e)=>{
            
-                audioList.currentTime=0;
+                audioList[i].currentTime=0;
                 audioList[i].play();
 
                 list[i].classList.add('play');
