@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +12,7 @@
     <style>
         body{
             display: flex;
-            
+             
             flex-direction: column;
             background: url("stadium-drums-Google-Search-2016-09-14-12-25-23.jpg");
             align-items: center;
@@ -20,9 +21,11 @@
         }
            .keys{
              display: flex;
+               flex-wrap:wrap;
              justify-content: space-evenly;
              width: 100vw;
              margin-top: 170px;
+             align-items: center;
 
             }
             .key{
@@ -94,6 +97,7 @@
             <kbd><b>L</b></kbd>
         </div>
     </div>
+    
     <audio data-key="65" src="./sounds/8[kb]clap.wav.mp3"></audio>
     <audio data-key="83" src="./sounds/Bass-Drum-Hit-Level-5a-www.fesliyanstudios.com.mp3"></audio>
     <audio data-key="68" src="./sounds/Bass-Drum-Hit-Level-6c-www.fesliyanstudios.com.mp3"></audio>
@@ -117,6 +121,24 @@
                  }, 100);
                 }
             });
+
+        let list= document.querySelectorAll('.key')  ;
+        let audioList = document.querySelectorAll('audio');
+        
+        for (let i=0 ; i<list.length ; i++ ){
+            list[i].addEventListener('click',(e)=>{
+           
+                audioList.currentTime=0;
+                audioList[i].play();
+
+                list[i].classList.add('play');
+                setTimeout(   ()=>{
+                    list[i].classList.remove('play');
+                },50);
+                
+            })
+        }
+
     </script>
 </body>
 </html>
